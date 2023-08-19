@@ -1,5 +1,6 @@
 ﻿namespace FactoryMethod
 {
+    #region First Example
     public abstract class DiscountService
     {
         public abstract int DiscountPercentage { get; }
@@ -85,4 +86,53 @@
             return new CountryDiscountService(_country);
         }
     }
+    #endregion
+
+    #region Second Example
+    public interface IBankFactory
+    {
+        IBank CreateBank();
+    }
+
+    public class BankFactory : IBankFactory
+    {
+        private readonly string _bankCode;
+
+        public BankFactory(string bankCode)
+        {
+            _bankCode = bankCode;
+        }
+
+        public IBank CreateBank()
+        {
+            return _bankCode switch
+            {
+                "111111" => new BankA(),
+                "123456" => new BankB(),
+                _ => throw new NotImplementedException("There is no bank configuaration for your bank yet")
+            };
+        }
+    }
+
+    public interface IBank
+    {
+        string Withdraw();
+    }
+
+    public class BankA : IBank
+    {
+        public string Withdraw()
+        {
+            return "Your transaction is handled by BankA";
+        }
+    }
+
+    public class BankB : IBank
+    {
+        public string Withdraw()
+        {
+            return "Your transaction is handled by BankB";
+        }
+    }
+    #endregion
 }
