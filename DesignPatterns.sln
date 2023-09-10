@@ -57,7 +57,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2- Template", "2- Template"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template", "Template\Template.csproj", "{30E22AC8-7FB0-4EF1-9326-6578E8AF01FF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Command", "Command", "{65A276F2-F75B-4710-B9D8-DFC04CEC7122}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3- Command", "3- Command", "{65A276F2-F75B-4710-B9D8-DFC04CEC7122}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Command", "Command\Command.csproj", "{283B9B5A-44BD-440A-8594-C36313D7F6F8}"
 EndProject
