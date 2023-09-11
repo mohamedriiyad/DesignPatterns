@@ -1,5 +1,6 @@
 ﻿namespace Memento
 {
+    // Originator
     public class Order
     {
         public int Id { get; set; }
@@ -18,6 +19,7 @@
         }
     }
 
+    // Memeneto
     public class OrderMemento
     {
         public int Id { get; private set; }
@@ -30,6 +32,7 @@
             Name = name;
         }
     }
+
 
     public class CareTaker
     {
