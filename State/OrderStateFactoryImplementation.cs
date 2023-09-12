@@ -1,5 +1,6 @@
 ﻿namespace State
 {
+    #region Factory method example
     internal interface IOrderStateFactory
     {
         IOrderState CreateOrderState();
@@ -31,4 +32,6 @@
             };
         }
     }
+
+    #endregion
 }

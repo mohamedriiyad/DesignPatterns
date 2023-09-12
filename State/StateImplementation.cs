@@ -1,5 +1,6 @@
 ﻿namespace State
 {
+    #region FirstExample
     public class Order
     {
         public Order()
@@ -386,4 +387,95 @@
             throw new NotImplementedException();
         }
     }
+    #endregion
+
+    #region SecondExample
+    class Context
+    {
+        private readonly TestConnectionState _testConnectionState;
+        private readonly ProductionConnectionState _productionConnectionState;
+        private readonly DevelopmentConnectionState _developmentConnectionState;
+
+        private IConnectionState state;
+
+        public Context()
+        {
+            _testConnectionState = new TestConnectionState();
+            _productionConnectionState = new ProductionConnectionState();
+            _developmentConnectionState = new DevelopmentConnectionState();
+
+            state = new TestConnectionState();
+        }
+
+        public void GoTest()
+        {
+            state = _testConnectionState;
+        }
+
+        public void GoProduction()
+        {
+            state = _productionConnectionState;
+        }
+
+        public void GoDevelopment()
+        {
+            state = _developmentConnectionState;
+        }
+
+        public void InsertData()
+        {
+            state.InsertData();
+        }
+
+        public void UpdateData()
+        {
+            state.UpdateData();
+        }
+    }
+
+    interface IConnectionState
+    {
+        void InsertData();
+        void UpdateData();
+    }
+
+    class DevelopmentConnectionState : IConnectionState
+    {
+        public void InsertData()
+        {
+            Console.WriteLine("Insert data to development");
+        }
+
+        public void UpdateData()
+        {
+            Console.WriteLine("Update data to development");
+        }
+    }
+
+    class TestConnectionState : IConnectionState
+    {
+        public void InsertData()
+        {
+            Console.WriteLine("Insert data to test");
+        }
+
+        public void UpdateData()
+        {
+            Console.WriteLine("Update data to test");
+        }
+    }
+
+    class ProductionConnectionState : IConnectionState
+    {
+        public void InsertData()
+        {
+            Console.WriteLine("Insert data to Production");
+        }
+
+        public void UpdateData()
+        {
+            Console.WriteLine("Update data to Production");
+        }
+    }
+    #endregion
 }
