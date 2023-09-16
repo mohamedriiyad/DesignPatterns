@@ -18,8 +18,8 @@ while(userIterator.HasNext())
 }
 
 /* summary
-/// The Iterator Pattern allows you to iterate over the elements of a collection without exposing its internal structure,
-/// supports multiple iterators for the same collection with individual traversal states, and promotes a consistent
-/// way to traverse different types of collections. It enhances code maintainability and flexibility by encapsulating
-/// collection details and providing a uniform interface for iteration.
+   The Iterator Pattern allows you to iterate over the elements of a collection without exposing its internal structure,
+   supports multiple iterators for the same collection with individual traversal states, and promotes a consistent
+   way to traverse different types of collections. It enhances code maintainability and flexibility by encapsulating
+   collection details and providing a uniform interface for iteration.
 */
